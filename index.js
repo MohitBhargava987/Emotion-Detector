@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -145,7 +146,7 @@ app.post('/detect-emotion', async (req, res) => {
             { inputs: text },
             {
                 headers: {
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`,
                 },
             }
         );
